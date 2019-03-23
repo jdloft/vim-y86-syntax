@@ -34,7 +34,7 @@ syn keyword y86AssemblerDirectives     .pos .align .long .quad
 syn match y86MemoryAccession "(\|)"
 
 syn match y86Registers      "%\(r\|e\)\([a-d]x\|[sd]i\|[sb]p\)"  " Match %, then 'r' or 'e', then (a through d)x or (s or d)i or (s or b)p
-syn match y86Registers      "%r\([8-9]\|1[0-5]\)"
+syn match y86Registers      "%r\([8-9]\|1[0-4]\)"
 
 syn match y86Label "^[^#]*:" containedin=ALLBUT,y86Comment       " Any number of non-'#' characters at the beginning of a line, followed by ':'
 syn match y86Literal "\$-\=[0-9]*"          " Match '$', followed by 0 or 1 '-' characters, followed by any number of decimal digits
@@ -66,13 +66,13 @@ if version >= 508 || !exists("did_dis_syntax_inits")
   HiLink y86Todo                    Todo
   HiLink y86Hex                     Constant
   HiLink y86Literal                 Constant
-  HiLink y86Registers               Type
-  HiLink y86BasicInstructions       Statement
-  HiLink y86MoveInstructions        Statement
-  HiLink y86BranchInstructions      Statement
-  HiLink y86OperationInstructions   Statement
-  HiLink y86TransferInstructions    Statement
-  HiLink y86StackInstructions       Statement
+  HiLink y86Registers               Identifier
+  HiLink y86BasicInstructions       Type
+  HiLink y86MoveInstructions        Type
+  HiLink y86BranchInstructions      Type
+  HiLink y86OperationInstructions   Type
+  HiLink y86TransferInstructions    Type
+  HiLink y86StackInstructions       Type
   HiLink y86MemoryAccession         PreProc
   HiLink y86Label                   PreProc
   HiLink y86AssemblerDirectives     PreProc
